@@ -1,0 +1,16 @@
+---
+users:
+  - username: hardy
+    use_sudo: no
+
+  - username: agus
+    use_sudo: yes
+
+  - username: agustian
+    use_sudo: yes
+
+  - username: rifa
+    use_sudo: yes
+
+  - username: pahlepi
+    use_sudo: no

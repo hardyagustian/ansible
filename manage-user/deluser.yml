@@ -1,0 +1,15 @@
+---
+- name: del user
+  hosts: all
+  gather_facts: yes
+  become: yes
+
+  vars_files:
+  - users.yml
+  tasks:
+  
+   - name: del user
+     user: name={{ item.username }} state=absent remove=yes
+     with_items: '{{users}}'
+   - name: remove file sudo
+     file: path=/etc/sudoers.d/users state=absent

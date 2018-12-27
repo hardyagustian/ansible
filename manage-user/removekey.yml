@@ -1,0 +1,13 @@
+---
+- name: dell user key
+  hosts: all
+  gather_facts: yes
+  become: yes
+
+  vars_files:
+  - list-remove-key-user.yml
+  tasks:
+  
+   - name: Setup | authorized key remove
+     authorized_key: user={{ item.username }} key="{{ lookup('file', 'pub_keys/{{ item.username }}.pub') }}" manage_dir=yes state=absent exclusive=True
+     with_items: '{{users}}'

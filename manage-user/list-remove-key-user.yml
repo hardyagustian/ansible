@@ -1,0 +1,4 @@
+---
+users:
+  - username: ansible
+    use_sudo: no

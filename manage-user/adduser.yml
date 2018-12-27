@@ -12,9 +12,6 @@
      user: name={{ item.username }} shell=/bin/bash createhome=yes generate_ssh_key=yes comment='create with ansible'
      with_items: '{{users}}'
 
-   - name: create file sudo
-     copy: src=file/users dest=/etc/sudoers.d/users  owner=root group=root
-
    - name: Sudoers | update sudoers file and validate
      lineinfile: "dest=/etc/sudoers.d/users
        insertafter=EOF
